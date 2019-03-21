@@ -24,6 +24,7 @@ def plot_line(data, theta, x, y):
     plt.show()
 
 def gradient_descent_linear_regression(filename, alpha=0.05, iteration=100):
+    ''' Using the gradient descent to find the theta's and cost'''
     data = pd.read_csv(filename)
     data.drop(['Unnamed: 0'], axis=1)
     x = np.column_stack((np.ones(len(data['TV'])), data['TV']))
@@ -42,7 +43,7 @@ def gradient_descent_linear_regression(filename, alpha=0.05, iteration=100):
         theta0.append(t0)
         theta1.append(t1)
         costs.append(cost)
-        if i % 10==0:
+        if i % 10 == 0:
             print(f"Iteration: {i+1},Cost = {cost},theta = {theta}")
             plot_line(data, theta, x, y)
 
