@@ -10,8 +10,9 @@ def predict_price(x, theta):
     return np.dot(x, theta)
 
 def calculate_cost(theta, x, y):
-   prediction = predict_price(x, theta)
-   return ((prediction - y)**2).mean() / 2
+    '''Calculate the cost J for the given parameters'''
+    prediction = predict_price(x, theta)
+    return ((prediction - y)**2).mean() / 2
 
 def plot_line(data, theta, x, y):
     '''Plot the values and the best fit line'''
